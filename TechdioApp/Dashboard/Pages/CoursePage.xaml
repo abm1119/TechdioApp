@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TechdioApp.Dashboard.Pages.CoursePage"
+             xmlns:models="clr-namespace:TechdioApp.Models"
+             xmlns:Shell="clr-namespace:Microsoft.Maui.Controls;assembly=Microsoft.Maui.Controls"
+             Shell.NavBarIsVisible="False"
+      BackgroundColor="#f9f9f9">
+
+    <ContentPage.Content>
+        <ScrollView>
+        <VerticalStackLayout Padding="10">
+
+            <!-- Search Bar -->
+            <SearchBar x:Name="SearchBar" 
+                       Placeholder="Search courses..."
+                       TextChanged="OnSearchTextChanged" 
+                       BackgroundColor="White"
+                       Margin="0,10"
+                       HorizontalOptions="FillAndExpand"/>
+
+            <!-- Category Filter -->
+            <HorizontalStackLayout Spacing="10" Padding="5">
+                <Button Text="All" Command="{Binding FilterCommand}" CommandParameter="All" BackgroundColor="#2196F3" TextColor="White" BorderColor="Transparent"/>
+                <Button Text="Tech" Command="{Binding FilterCommand}" CommandParameter="Tech" BackgroundColor="#4CAF50" TextColor="White" BorderColor="Transparent"/>
+                <Button Text="Design" Command="{Binding FilterCommand}" CommandParameter="Design" BackgroundColor="#FF9800" TextColor="White" BorderColor="Transparent"/>
+                <Button Text="Islam" Command="{Binding FilterCommand}" CommandParameter="Islam" BackgroundColor="#9C27B0" TextColor="White" BorderColor="Transparent"/>
+            </HorizontalStackLayout>
+
+            <!-- Course List -->
+            <CollectionView ItemsSource="{Binding FilteredCourses}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="15" Margin="10" BackgroundColor="White" CornerRadius="12" HasShadow="True">
+                            <VerticalStackLayout>
+                                <Image Source="{Binding Image}" HeightRequest="150" Aspect="AspectFill"/>
+                                <Label Text="{Binding Title}" FontSize="20" FontAttributes="Bold" TextColor="#333"/>
+                                <Label Text="{Binding ShortDescription}" FontSize="14" TextColor="#555"/>
+                                <Label Text="{Binding Category}" FontSize="12" TextColor="White" BackgroundColor="#2196F3" Padding="5"/>
+                                <Label Text="{Binding Price}" FontSize="16" FontAttributes="Bold" TextColor="#4CAF50"/>
+                                <Button Text="View Details"
+                                        BackgroundColor="#2196F3"
+                                        TextColor="White"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.NavigateToDetailCommand}"
+                                        CommandParameter="{Binding}"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

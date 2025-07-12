@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="TechdioApp.Pages.SigninView"
+             Shell.NavBarIsVisible="False">
+
+    <!-- Background with gradient -->
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#1F2937" Offset="0.0" />
+            <GradientStop Color="#3B4252" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="30" VerticalOptions="CenterAndExpand">
+
+            <!-- App Logo -->
+            <Image Source="tdlogo_wh.png" HeightRequest="150" HorizontalOptions="Center" />
+            <Label Text="Welcome to Techdio" FontSize="28" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" />
+            <Label Text="Sign in to continue" FontSize="14" TextColor="LightGray" HorizontalOptions="Center" />
+
+            <!-- Email Input -->
+            <Frame  Padding="5" HasShadow="False">
+                <HorizontalStackLayout Spacing="10">
+                    <Image Source="email.png" WidthRequest="40" HeightRequest="20" />
+                    <Entry Placeholder="Email Address" 
+                           Text="{Binding Email, Mode=TwoWay}" 
+                           Keyboard="Email"
+                           TextColor="#111827"
+                           WidthRequest="250"
+                           PlaceholderColor="#9CA3AF" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <!-- Password Input -->
+            <Frame  Padding="5" HasShadow="False">
+                <HorizontalStackLayout Spacing="10">
+                    <Image Source="lock.png" WidthRequest="40" HeightRequest="20" />
+                    <Entry Placeholder="Password" 
+                           Text="{Binding Password, Mode=TwoWay}" 
+                           IsPassword="True"
+                           TextColor="#111827" 
+                           WidthRequest="250"
+                           PlaceholderColor="#9CA3AF" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <!-- Error Message -->
+            <Label Text="{Binding ErrorMessage}" TextColor="Red" FontSize="12" HorizontalOptions="Center" />
+
+            <!-- Sign In Button -->
+            <Button Text="Sign In" 
+                    Command="{Binding SignInCommand}" 
+                    BackgroundColor="#2563EB"
+                    TextColor="White" 
+                    FontSize="16"
+                    CornerRadius="10"
+                    HeightRequest="50" />
+
+            <!-- Sign Up Section -->
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="5">
+                <Label Text="Don't have an account?" TextColor="White" FontSize="14" />
+                <Button Text="Sign Up" 
+                        Command="{Binding NavigateSignUpCommand}" 
+                        TextColor="#60A5FA" 
+                        BackgroundColor="Transparent"
+                        FontAttributes="Bold"
+                        Padding="0" />
+            </HorizontalStackLayout>
+
+            <!-- Footer -->
+            <Label Text="© 2024 Techdio. All Rights Reserved." 
+                   FontSize="12" 
+                   TextColor="LightGray" 
+                   HorizontalOptions="Center" 
+                   Margin="0,20,0,0" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35431.28
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechdioApp", "TechdioApp\TechdioApp.csproj", "{C0D325A2-A662-4F8F-9DB6-111A14ED834B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0D325A2-A662-4F8F-9DB6-111A14ED834B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0D325A2-A662-4F8F-9DB6-111A14ED834B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0D325A2-A662-4F8F-9DB6-111A14ED834B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C0D325A2-A662-4F8F-9DB6-111A14ED834B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0D325A2-A662-4F8F-9DB6-111A14ED834B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0D325A2-A662-4F8F-9DB6-111A14ED834B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C78F03F1-A233-48B7-91E3-649CDDAA9546}
+	EndGlobalSection
+EndGlobal

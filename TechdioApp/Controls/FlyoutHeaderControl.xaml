@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout Padding="40" BackgroundColor="#F8F9FA" xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TechdioApp.Controls.FlyoutHeaderControl">
+    <!-- Gradient Background -->
+    <StackLayout.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#4CAF50" Offset="0.1" />
+            <GradientStop Color="#81C784" Offset="1.0" />
+        </LinearGradientBrush>
+    </StackLayout.Background>
+
+    <!-- User Profile Section -->
+    <StackLayout Margin="0,20,0,10" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Start">
+        <!-- Larger Rectangular Profile Frame -->
+        <Frame Padding="0" HeightRequest="150" WidthRequest="300" CornerRadius="0"
+               BackgroundColor="#FFFFFF" HasShadow="True" HorizontalOptions="Center">
+            <Image x:Name="UserProfileImage" HeightRequest="150" WidthRequest="300" 
+                   Aspect="AspectFill" Source="profile.png" />
+        </Frame>
+
+        <!-- User Details -->
+        <Label x:Name="lblUserName" FontSize="24" FontAttributes="Bold" TextColor="#FFFFFF" 
+               HorizontalTextAlignment="Center" Margin="0,20,0,0" />
+        <Label x:Name="lblUserEmail" FontSize="16" TextColor="#E0E0E0" 
+               HorizontalTextAlignment="Center" Margin="0,5,0,0" />
+
+        <!-- Role Badge with Modern Design -->
+        <Frame Padding="10,5" CornerRadius="20" BackgroundColor="#1B5E20" Margin="0,10,0,0"
+               HasShadow="True" HorizontalOptions="Center">
+            <Label x:Name="lblUserRole" FontSize="14" TextColor="#FFFFFF" 
+                   HorizontalTextAlignment="Center" FontAttributes="Bold" />
+        </Frame>
+    </StackLayout>
+
+    <!-- Divider -->
+    <BoxView HeightRequest="1" BackgroundColor="#FFFFFF" Opacity="0.3" HorizontalOptions="FillAndExpand" Margin="0,20,0,20"/>
+
+    <!-- Additional Decorative Element -->
+    <Frame BackgroundColor="#FFFFFF" Opacity="0.1" CornerRadius="10" HeightRequest="8" Margin="0,20,0,0"
+           HorizontalOptions="Center" WidthRequest="60" />
+</StackLayout>

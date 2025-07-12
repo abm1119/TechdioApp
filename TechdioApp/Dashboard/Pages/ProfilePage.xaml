@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TechdioApp.Dashboard.Pages.ProfilePage"
+             Shell.NavBarIsVisible="False">
+    <ScrollView>
+        <Grid RowDefinitions="Auto,*">
+            <!-- Header Section -->
+            <BoxView Grid.Row="0"
+                     HeightRequest="160"
+                     BackgroundColor="#6B46C1"/>
+
+            <VerticalStackLayout Spacing="0">
+                <!-- Profile Section -->
+                <Frame CornerRadius="85"
+                       HeightRequest="170"
+                       WidthRequest="170"
+                       BorderColor="White"
+                       Padding="5"
+                       Margin="0,40,0,0"
+                       BackgroundColor="White"
+                       HorizontalOptions="Center">
+                    <Image Source="{Binding User.ImageUrl}"
+                           Aspect="AspectFill"
+                           HeightRequest="160"
+                           WidthRequest="160"/>
+                </Frame>
+
+                <!-- Profile Details Card -->
+                <Frame Margin="20,20"
+                       Padding="20"
+                       BorderColor="Transparent"
+                       BackgroundColor="{AppThemeBinding Light=#f8f9fa, Dark=#2D2D2D}"
+                       CornerRadius="20">
+
+                    <VerticalStackLayout Spacing="20">
+                        <!-- Name -->
+                        <Label Text="{Binding User.Name}"
+                               FontSize="28"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"
+                               TextColor="{AppThemeBinding Light=Black, Dark=White}"/>
+
+                        <!-- Profile Info -->
+                        <Frame BorderColor="Transparent"
+                               Padding="15"
+                               BackgroundColor="{AppThemeBinding Light=#ffffff, Dark=#1F1F1F}"
+                               CornerRadius="15">
+
+                            <VerticalStackLayout Spacing="15">
+                                <!-- Email -->
+                                <Border Stroke="{AppThemeBinding Light=#dee2e6, Dark=#404040}"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 10"
+                                        Padding="15,12">
+                                    <VerticalStackLayout>
+                                        <Label Text="Email"
+                                               FontSize="12"
+                                               TextColor="{AppThemeBinding Light=#6c757d, Dark=#a0aec0}"/>
+                                        <Label Text="{Binding User.Email}"
+                                               FontSize="16"
+                                               TextColor="{AppThemeBinding Light=Black, Dark=White}"/>
+                                    </VerticalStackLayout>
+                                </Border>
+
+                                <!-- Phone -->
+                                <Border Stroke="{AppThemeBinding Light=#dee2e6, Dark=#404040}"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 10"
+                                        Padding="15,12">
+                                    <VerticalStackLayout>
+                                        <Label Text="Phone"
+                                               FontSize="12"
+                                               TextColor="{AppThemeBinding Light=#6c757d, Dark=#a0aec0}"/>
+                                        <Label Text="{Binding User.Phone}"
+                                               FontSize="16"
+                                               TextColor="{AppThemeBinding Light=Black, Dark=White}"/>
+                                    </VerticalStackLayout>
+                                </Border>
+
+                                <!-- University -->
+                                <Border Stroke="{AppThemeBinding Light=#dee2e6, Dark=#404040}"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 10"
+                                        Padding="15,12">
+                                    <VerticalStackLayout>
+                                        <Label Text="University"
+                                               FontSize="12"
+                                               TextColor="{AppThemeBinding Light=#6c757d, Dark=#a0aec0}"/>
+                                        <Label Text="{Binding User.University}"
+                                               FontSize="16"
+                                               TextColor="{AppThemeBinding Light=Black, Dark=White}"/>
+                                    </VerticalStackLayout>
+                                </Border>
+
+                                <!-- Location -->
+                                <Border Stroke="{AppThemeBinding Light=#dee2e6, Dark=#404040}"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 10"
+                                        Padding="15,12">
+                                    <VerticalStackLayout>
+                                        <Label Text="Location"
+                                               FontSize="12"
+                                               TextColor="{AppThemeBinding Light=#6c757d, Dark=#a0aec0}"/>
+                                        <Label Text="{Binding User.Location}"
+                                               FontSize="16"
+                                               TextColor="{AppThemeBinding Light=Black, Dark=White}"/>
+                                    </VerticalStackLayout>
+                                </Border>
+                            </VerticalStackLayout>
+                        </Frame>
+
+                        <!-- Edit Profile Button -->
+                        <Button Text="Edit Profile"
+                                Clicked="OnEditProfileClicked"
+                                BackgroundColor="#6B46C1"
+                                TextColor="White"
+                                FontAttributes="Bold"
+                                HeightRequest="50"
+                                CornerRadius="25"/>
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

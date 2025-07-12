@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TechdioApp.Dashboard.Pages.TutorPage"
+             xmlns:viewmodels="clr-namespace:TechdioApp.Dashboard.ViewModels"
+             Shell.NavBarIsVisible="False">
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="HeaderTextStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="32" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Light=#2B32B2, Dark=White}" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+
+            <Style x:Key="TutorCardStyle" TargetType="Frame">
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="HasShadow" Value="True" />
+                <Setter Property="Padding" Value="20" />
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=White, Dark=#2D2D3A}" />
+                <Setter Property="WidthRequest" Value="300" />
+                <Setter Property="Margin" Value="10" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20">
+            <!-- Header -->
+            <Label Text="Find Your Perfect Tutor" Style="{StaticResource HeaderTextStyle}" />
+
+            <!-- Search Bar -->
+            <SearchBar Placeholder="Search tutors or subjects..."
+                       Text="{Binding SearchText, Mode=TwoWay}"
+                       BackgroundColor="Transparent"
+                       TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                       PlaceholderColor="{AppThemeBinding Light=#666666, Dark=#CCCCCC}" />
+
+            <!-- Filters -->
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                <Picker Title="All Subjects"
+                        ItemsSource="{Binding Subjects}"
+                        SelectedItem="{Binding SelectedSubject, Mode=TwoWay}"
+                        BackgroundColor="Transparent"
+                        TextColor="{AppThemeBinding Light=Black, Dark=White}" />
+
+                <Picker Title="Any Availability"
+                        Grid.Column="1"
+                        ItemsSource="{Binding Availabilities}"
+                        SelectedItem="{Binding SelectedAvailability, Mode=TwoWay}"
+                        BackgroundColor="Transparent"
+                        TextColor="{AppThemeBinding Light=Black, Dark=White}" />
+            </Grid>
+
+            <!-- Sort Picker -->
+            <Picker Title="Sort By"
+                    ItemsSource="{Binding SortOptions}"
+                    SelectedItem="{Binding SelectedSortOption, Mode=TwoWay}"
+                    BackgroundColor="Transparent"
+                    TextColor="{AppThemeBinding Light=Black, Dark=White}" />
+
+            <!-- Tutor Cards -->
+            <CollectionView ItemsSource="{Binding Tutors}"
+                            EmptyView="No tutors found matching your criteria">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="15" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Style="{StaticResource TutorCardStyle}">
+                            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                                  RowSpacing="10">
+                                <Frame Grid.Row="0"
+                                       HeightRequest="100"
+                                       WidthRequest="100"
+                                       CornerRadius="50"
+                                       IsClippedToBounds="True"
+                                       Padding="0"
+                                       HorizontalOptions="Center">
+                                    <Image Source="{Binding Image}"
+                                           Aspect="AspectFill"
+                                           HeightRequest="100"
+                                           WidthRequest="100" />
+                                </Frame>
+
+                                <Label Grid.Row="1"
+                                       Text="{Binding Name}"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       TextColor="{AppThemeBinding Light=#2B32B2, Dark=White}"
+                                       HorizontalOptions="Center" />
+
+                                <Label Grid.Row="2"
+                                       Text="{Binding Expertise}"
+                                       FontSize="14"
+                                       TextColor="{AppThemeBinding Light=#666666, Dark=#CCCCCC}"
+                                       HorizontalOptions="Center" />
+
+                                <Label Grid.Row="3"
+                                       Text="{Binding Qualifications}"
+                                       FontSize="12"
+                                       TextColor="{AppThemeBinding Light=#666666, Dark=#CCCCCC}"
+                                       HorizontalOptions="Center" />
+
+                                <Button Grid.Row="4"
+                                        Text="Hire Tutor"
+                                        BackgroundColor="{AppThemeBinding Light=#2B32B2, Dark=#3F3F50}"
+                                        TextColor="White"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:TutorPageViewModel}}, Path=HireTutorCommand}"
+                                        CommandParameter="{Binding .}"
+                                        HorizontalOptions="Center" />
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

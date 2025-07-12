@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="TechdioApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:TechdioApp.Pages"
+    xmlns:dashboard="clr-namespace:TechdioApp.Dashboard"
+    xmlns:dashbaordpages="clr-namespace:TechdioApp.Dashboard.Pages"
+    xmlns:vm="clr-namespace:TechdioApp.Dashboard"
+    x:DataType="vm:AppShellViewModel"
+    xmlns:controls="clr-namespace:TechdioApp.Controls"
+    xmlns:local="clr-namespace:TechdioApp"
+    FlyoutBackgroundColor="#FFFFFF"
+    Shell.FlyoutBehavior="Flyout">
+    <!-- Flyout Header -->
+
+    <!-- Auth Pages -->
+    <ShellContent
+        FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        ContentTemplate="{DataTemplate local:AboutPage}"
+        Route="About" />
+
+    <!-- Auth Pages -->
+    <ShellContent
+        Title="Sign In"
+        FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        ContentTemplate="{DataTemplate pages:SigninView}"
+        Route="SignIn" />
+
+    <!-- Dashboard Pages -->
+    <ShellContent  
+        Title=""
+        ContentTemplate="{DataTemplate pages:DashboardView}" 
+        Route="Dashboard" />
+
+    <ShellContent
+        Title="Sign Up"
+        FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        ContentTemplate="{DataTemplate pages:SignUpView}"
+        Route="SignUp" />
+
+    <!-- Global Navbar Customization -->
+    <ShellContent 
+        Title="Home"
+        Icon="home.png"
+        ContentTemplate="{DataTemplate dashbaordpages:HomePage}" 
+        Route="Home" />
+
+    <ShellContent 
+        Title="Courses"
+        Icon="courseicon.png"
+        ContentTemplate="{DataTemplate dashbaordpages:CoursePage}" 
+        Route="Courses" />
+
+    <ShellContent 
+        Title="Tutors"
+        Icon="tutor.png"
+        ContentTemplate="{DataTemplate dashbaordpages:TutorPage}" 
+        Route="Tutors" />
+
+    <ShellContent 
+        Title="Profile"
+        Icon="profile.png"
+        ContentTemplate="{DataTemplate dashbaordpages:ProfilePage}" 
+        Route="Profile" />
+
+    <ShellContent 
+        FlyoutItemIsVisible="False"
+        ContentTemplate="{DataTemplate pages:CustomCourse}" 
+        Route="custom" />
+
+
+    <ShellContent 
+      FlyoutItemIsVisible="False"
+      ContentTemplate="{DataTemplate dashbaordpages:JoinWaitlist}" 
+      Route="JoinWaitlist" />
+    <ShellContent 
+       FlyoutItemIsVisible="False"
+       ContentTemplate="{DataTemplate pages:HireTutorFormPage}" 
+       Route="HireTotorForm" />
+
+
+    <!-- Loading Page -->
+    <ShellContent 
+        FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        ContentTemplate="{DataTemplate dashboard:LoadingPage}" 
+        Route="LoadingPage" />
+
+
+    <!-- Flyout Footer -->
+    <Shell.FlyoutFooter>
+        <StackLayout Padding="20,10">
+            <BoxView HeightRequest="1" BackgroundColor="#DEE2E6" HorizontalOptions="FillAndExpand" Margin="0,10,0,10" />
+            <Button 
+                Text="Sign Out" 
+                Command="{Binding LogoutCommand}" 
+                TextColor="#D9534F" 
+                BackgroundColor="Transparent" 
+                FontSize="16" 
+                BorderColor="#D9534F" 
+                BorderWidth="1" 
+                CornerRadius="8" 
+                HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+    </Shell.FlyoutFooter>
+</Shell>

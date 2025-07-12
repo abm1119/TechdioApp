@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TechdioApp.Pages.EditProfilePage"
+             Shell.NavBarIsVisible="False">
+    <ScrollView>
+        <Grid RowDefinitions="Auto,*,Auto" Padding="20">
+            <!-- Profile Image Section -->
+            <VerticalStackLayout Grid.Row="0" Spacing="15" Margin="0,10,0,20">
+                <Frame HeightRequest="120" WidthRequest="120"
+                       CornerRadius="60"
+                       IsClippedToBounds="True"
+                       Padding="0"
+                       BorderColor="#6B46C1"
+                       HorizontalOptions="Center">
+                    <Image x:Name="ProfileImage"
+                           Source="{Binding ImageUrl}"
+                           Aspect="AspectFill"
+                           HeightRequest="120"
+                           WidthRequest="120">
+                    </Image>
+                </Frame>
+                <Label Text="Tap to change profile photo"
+                       TextColor="#6B46C1"
+                       HorizontalOptions="Center"
+                       FontSize="14"/>
+            </VerticalStackLayout>
+
+            <!-- Form Fields -->
+            <VerticalStackLayout Grid.Row="1" Spacing="20">
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Full Name" FontSize="14"/>
+                    <Frame Padding="15,0" BorderColor="#E5E7EB" BackgroundColor="Transparent" CornerRadius="8" HeightRequest="45">
+                        <Entry x:Name="NameEntry" Text="{Binding Name}" Placeholder="Enter your full name" />
+                    </Frame>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Email Address" FontSize="14"/>
+                    <Frame Padding="15,0" BorderColor="#E5E7EB" BackgroundColor="Transparent" CornerRadius="8" HeightRequest="45">
+                        <Entry x:Name="EmailEntry" Text="{Binding Email}" Placeholder="Enter your email" Keyboard="Email" />
+                    </Frame>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Phone Number" FontSize="14"/>
+                    <Frame Padding="15,0" BorderColor="#E5E7EB" BackgroundColor="Transparent" CornerRadius="8" HeightRequest="45">
+                        <Entry x:Name="PhoneEntry" Text="{Binding Phone}" Placeholder="Enter your phone number" Keyboard="Telephone" />
+                    </Frame>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="University" FontSize="14"/>
+                    <Frame Padding="15,0" BorderColor="#E5E7EB" BackgroundColor="Transparent" CornerRadius="8" HeightRequest="45">
+                        <Entry x:Name="UniversityEntry" Text="{Binding University}" Placeholder="Enter your university" />
+                    </Frame>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Location" FontSize="14"/>
+                    <Frame Padding="15,0" BorderColor="#E5E7EB" BackgroundColor="Transparent" CornerRadius="8" HeightRequest="45">
+                        <Entry x:Name="LocationEntry" Text="{Binding Location}" Placeholder="Enter your location" />
+                    </Frame>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+
+            <!-- Save Button -->
+            <Button Grid.Row="2"
+                    Text="Save Changes"
+                    BackgroundColor="#6B46C1"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="8"
+                    HeightRequest="50"
+                    Margin="0,20,0,0"
+                    Clicked="OnSaveClicked"/>
+
+            <!-- Loading Indicator -->
+            <ActivityIndicator Grid.RowSpan="3"
+                               x:Name="LoadingIndicator"
+                               IsVisible="False"
+                               IsRunning="False"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               Color="#6B46C1"/>
+            <!-- Back Button -->
+            <Button Grid.Row="2"
+        Text="Back"
+        BackgroundColor="Transparent"
+        TextColor="#6B46C1"
+        FontAttributes="Bold"
+        CornerRadius="8"
+        HeightRequest="50"
+        Margin="0,10,0,0"
+        Clicked="OnBackClicked"/>
+        </Grid>
+    </ScrollView>
+</ContentPage>

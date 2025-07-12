@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TechdioApp.AboutPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#F9F9F9">
+
+    <!-- Root Layout -->
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="10" >
+
+            <!-- Logo and Techdio Name -->
+            <Image Source="tdlogo.png" 
+                   HeightRequest="200" 
+                   Aspect="AspectFill"
+                   HorizontalOptions="Center"/>
+            <Label Text="Techdio" 
+                   FontSize="36" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center"
+                   TextColor="#2C3E50" />
+            <Label Text="Empowering Innovation,Simplifying Technology" 
+                   FontSize="16"  
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   TextColor="#666666"
+                   Margin="0,5,0,20" />
+
+            <!-- About Techdio Description with Card Layout -->
+            <Frame Padding="20" 
+                   BackgroundColor="#FFFFFF" 
+                   CornerRadius="15" 
+                   HasShadow="True"
+                   BorderColor="#E0E0E0">
+                <StackLayout Spacing="10">
+                    <Label Text="Techdio is an innovative learning platform that seamlessly blends technology, design, and Islamic studies, providing a unique educational experience. With personalized tutoring and custom course options, it empowers students to learn in ways that suit their individual needs. By offering free resources and fostering a supportive community, Techdio is dedicated to making quality education accessible for everyone." 
+                           FontSize="16" 
+                           TextColor="#333333" 
+                           HorizontalOptions="Center" 
+                           HorizontalTextAlignment="Center" />
+                    <Label x:Name="LinkLabel" 
+                           Text="Know more about Techdio here" 
+                           FontSize="14" 
+                           TextColor="#007BFF" 
+                           HorizontalOptions="Center" 
+                           HorizontalTextAlignment="Center"
+                           TextDecorations="Underline">
+                    </Label>
+                </StackLayout>
+            </Frame>
+
+            <!-- Buttons for Navigation -->
+            <Button Text="Sign In" 
+                    BackgroundColor="#28A745" 
+                    TextColor="White" 
+                    FontAttributes="Bold" 
+                    CornerRadius="25" 
+                    HeightRequest="50" 
+                    HorizontalOptions="Fill" 
+                    Clicked="OnSignInClicked"
+                    Margin="0,20,0,10" />
+            <Button Text="Sign Up" 
+                    BackgroundColor="#FF5722" 
+                    TextColor="White" 
+                    FontAttributes="Bold" 
+                    CornerRadius="25" 
+                    HeightRequest="50" 
+                    HorizontalOptions="Fill" 
+                    Clicked="OnSignUpClicked"
+                    Margin="0,10,0,20" />
+
+            <!-- Copyright Notice -->
+            <Label Text="© 2025 Techdio. All rights reserved." 
+                   FontSize="12" 
+                   TextColor="#666666" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="End"
+                   Margin="0,20,0,0" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

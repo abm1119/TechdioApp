@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:TechdioApp.Dashboard.Models"
+             x:Class="TechdioApp.Dashboard.Pages.HomePage"
+             Shell.NavBarIsVisible="False"
+         BackgroundColor="#F5F5F5">
+
+    <!-- Gradient Background -->
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#F5F5F5" Offset="0"/>
+            <GradientStop Color="#F5F5F5" Offset="1"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="20">
+            <!-- Header Section -->
+            <Grid ColumnDefinitions="*, Auto" Margin="0,20">
+                <!-- Logo and App Name -->
+                <HorizontalStackLayout Grid.Column="0" Spacing="20" VerticalOptions="Center">
+                    <!-- Logo -->
+                    <Image Source="tdlogo.png"
+                           HeightRequest="100"
+                           WidthRequest="100"
+                           Aspect="AspectFit"
+                           Opacity="0.9"/>
+
+                    <!-- App Name and Tagline -->
+                    <VerticalStackLayout Spacing="5" VerticalOptions="Center">
+                        <Label Text="Techdio"
+                               FontSize="32"
+                               FontAttributes="Bold"
+                               TextColor="#2E4053"
+                               FontFamily="Montserrat-Bold"/>
+                        <Label Text="Interactive Learning Platform"
+                               FontSize="16"
+                               TextColor="#566573"
+                               FontFamily="Montserrat-Medium"/>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+            </Grid>
+
+            <!-- Categories Section -->
+            <Label Text="Categories"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="#2E4053"
+                   Margin="0,0,0,10"
+                   FontFamily="Montserrat-Bold"/>
+
+            <!-- Cards Grid -->
+            <FlexLayout Wrap="Wrap" JustifyContent="SpaceBetween" >
+                <!-- Tech Courses -->
+                <Border BackgroundColor="#FFFFFF"
+                        Stroke="#6C5CE7" 
+                    StrokeThickness="2"
+                        Padding="10"
+                        WidthRequest="160"
+                        HeightRequest="160">
+                    <Border.Shadow>
+                        <Shadow Brush="#000000"
+                                Offset="5,5"
+                                Radius="10"
+                                Opacity="0.1"/>
+                    </Border.Shadow>
+                    <VerticalStackLayout Spacing="15" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image Source="tech.png"
+                               HeightRequest="50"
+                               WidthRequest="50"
+                               Opacity="0.9"/>
+                        <Label Text="Tech Courses"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               TextColor="#2E4053"
+                               FontFamily="Montserrat-Bold"/>
+                        <Label Text="120+ courses"
+                               FontSize="14"
+                               TextColor="#566573"
+                               FontFamily="Montserrat-Medium"/>
+                    </VerticalStackLayout>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTechCoursesTapped"/>
+                    </Border.GestureRecognizers>
+                </Border>
+
+                <!-- Design Courses -->
+                <Border BackgroundColor="#FFFFFF"
+                        Stroke="#0984E3" 
+                    StrokeThickness="2"
+                        Padding="10"
+                        WidthRequest="160"
+                        HeightRequest="160">
+                    <Border.Shadow>
+                        <Shadow Brush="#000000"
+                                Offset="5,5"
+                                Radius="10"
+                                Opacity="0.1"/>
+                    </Border.Shadow>
+                    <VerticalStackLayout Spacing="15" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image Source="design.png"
+                               HeightRequest="50"
+                               WidthRequest="50"
+                               Opacity="0.9"/>
+                        <Label Text="Design Courses"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               TextColor="#2E4053"
+                               FontFamily="Montserrat-Bold"/>
+                        <Label Text="85+ courses"
+                               FontSize="14"
+                               TextColor="#566573"
+                               FontFamily="Montserrat-Medium"/>
+                    </VerticalStackLayout>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnDesignCoursesTapped"/>
+                    </Border.GestureRecognizers>
+                </Border>
+
+                <!-- Islamic Learning -->
+                <Border BackgroundColor="#FFFFFF"
+                        Stroke="#6C5CE7"
+                    StrokeThickness="2"
+                        Padding="10"
+                        WidthRequest="160"
+                        HeightRequest="160">
+                    <Border.Shadow>
+                        <Shadow Brush="#000000"
+                                Offset="5,5"
+                                Radius="10"
+                                Opacity="0.1"/>
+                    </Border.Shadow>
+                    <VerticalStackLayout Spacing="15" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image Source="islam.png"
+                               HeightRequest="50"
+                               WidthRequest="50"
+                               Opacity="0.9"/>
+                        <Label Text="Islamic Learning"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               TextColor="#2E4053"
+                               FontFamily="Montserrat-Bold"/>
+                        <Label Text="50+ courses"
+                               FontSize="14"
+                               TextColor="#566573"
+                               FontFamily="Montserrat-Medium"/>
+                    </VerticalStackLayout>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnIslamicLearningTapped"/>
+                    </Border.GestureRecognizers>
+                </Border>
+
+                <!-- Opportunities -->
+                <Border BackgroundColor="#FFFFFF"
+                        Stroke="#0984E3" 
+                    StrokeThickness="2"
+                        Padding="10"
+                        WidthRequest="160"
+                        HeightRequest="160">
+                    <Border.Shadow>
+                        <Shadow Brush="#000000"
+                                Offset="5,5"
+                                Radius="10"
+                                Opacity="0.1"/>
+                    </Border.Shadow>
+                    <VerticalStackLayout Spacing="15" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image Source="oppertunity.png"
+                               HeightRequest="50"
+                               WidthRequest="50"
+                               Opacity="0.9"/>
+                        <Label Text="Opportunities"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               TextColor="#2E4053"
+                               FontFamily="Montserrat-Bold"/>
+                        <Label Text="200+ listings"
+                               FontSize="14"
+                               TextColor="#566573"
+                               FontFamily="Montserrat-Medium"/>
+                    </VerticalStackLayout>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnOpportunitiesTapped"/>
+                    </Border.GestureRecognizers>
+                </Border>
+
+                <!-- Custom Courses -->
+                <Border BackgroundColor="#FFFFFF"
+                        Stroke="#6C5CE7"
+                    StrokeThickness="2"
+                        Padding="10"
+                        WidthRequest="160"
+                        HeightRequest="160">
+                    <Border.Shadow>
+                        <Shadow Brush="#000000"
+                                Offset="5,5"
+                                Radius="10"
+                                Opacity="0.1"/>
+                    </Border.Shadow>
+                    <VerticalStackLayout Spacing="15" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image Source="custom.png"
+                               HeightRequest="50"
+                               WidthRequest="50"
+                               Opacity="0.9"/>
+                        <Label Text="Custom Courses"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               TextColor="#2E4053"
+                               FontFamily="Montserrat-Bold"/>
+                        <Label Text="Create your own path"
+                               FontSize="12"
+                               TextColor="#566573"
+                               FontFamily="Montserrat-Medium"/>
+                    </VerticalStackLayout>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCustomCoursesTapped"/>
+                    </Border.GestureRecognizers>
+                </Border>
+
+                <!-- Hire Tutor -->
+                <Border BackgroundColor="#FFFFFF"
+                        Stroke="#0984E3"
+                    StrokeThickness="2"
+                        Padding="10"
+                        WidthRequest="160"
+                        HeightRequest="160">
+                    <Border.Shadow>
+                        <Shadow Brush="#000000"
+                                Offset="5,5"
+                                Radius="10"
+                                Opacity="0.1"/>
+                    </Border.Shadow>
+                    <VerticalStackLayout Spacing="15" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image Source="tutor.png"
+                               HeightRequest="50"
+                               WidthRequest="50"
+                               Opacity="0.9"/>
+                        <Label Text="Hire Tutor"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               TextColor="#2E4053"
+                               FontFamily="Montserrat-Bold"/>
+                        <Label Text="Find your mentor"
+                               FontSize="14"
+                               TextColor="#566573"
+                               FontFamily="Montserrat-Medium"/>
+                    </VerticalStackLayout>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnHireTutorTapped"/>
+                    </Border.GestureRecognizers>
+                </Border>
+            </FlexLayout>
+
+            <!-- Slogan and Copyright -->
+            <VerticalStackLayout Spacing="10" Margin="0,40,0,20" HorizontalOptions="Center">
+                <Label Text="Interactive Learning Companion for You"
+                       FontSize="16"
+                       TextColor="#2E4053"
+                       FontFamily="Montserrat-Medium"
+                       HorizontalOptions="Center"/>
+                <Label Text="© 2023 Techdio. All rights reserved."
+                       FontSize="12"
+                       TextColor="#566573"
+                       FontFamily="Montserrat-Regular"
+                       HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

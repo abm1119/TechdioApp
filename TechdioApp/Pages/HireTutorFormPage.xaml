@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TechdioApp.Pages.HireTutorFormPage"
+             Title="HireTutorFormPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <!-- Tutor Information -->
+            <Label Text="Selected Tutor:" FontAttributes="Bold" />
+            <Label x:Name="SelectedTutorLabel" Text="{Binding SelectedTutor.Name}" />
+
+            <!-- User Information -->
+            <Label Text="Your Information:" FontAttributes="Bold" />
+            <Entry Placeholder="Your Name" x:Name="UserNameEntry" />
+            <Entry Placeholder="Your Email" x:Name="UserEmailEntry" Keyboard="Email" />
+            <Entry Placeholder="Your Phone Number" x:Name="UserPhoneEntry" Keyboard="Telephone" />
+
+            <!-- Subject Selection -->
+            <Label Text="Select Subject:" FontAttributes="Bold" />
+            <Picker x:Name="SubjectPicker" Title="Choose a subject">
+                <Picker.Items>
+                    <x:String>Math</x:String>
+                    <x:String>Science</x:String>
+                    <x:String>History</x:String>
+                    <x:String>English</x:String>
+                    <x:String>Art</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <!-- Availability -->
+            <Label Text="Select Availability:" FontAttributes="Bold" />
+            <Picker x:Name="AvailabilityPicker" Title="Choose availability">
+                <Picker.Items>
+                    <x:String>Morning</x:String>
+                    <x:String>Afternoon</x:String>
+                    <x:String>Evening</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <!-- Mode (Online/Offline) -->
+            <Label Text="Preferred Mode:" FontAttributes="Bold" />
+            <RadioButton Content="Online" x:Name="OnlineRadioButton" IsChecked="True" />
+            <RadioButton Content="Offline" x:Name="OfflineRadioButton" />
+
+            <!-- Preferred Timings -->
+            <Label Text="Preferred Timings:" FontAttributes="Bold" />
+            <TimePicker x:Name="PreferredTimePicker" Format="HH:mm" />
+
+            <!-- Payment Information -->
+            <Label Text="Payment Information:" FontAttributes="Bold" />
+            <Entry Placeholder="Card Number" x:Name="CardNumberEntry" Keyboard="Numeric" />
+            <Entry Placeholder="Expiry Date (MM/YY)" x:Name="ExpiryDateEntry" />
+            <Entry Placeholder="CVV" x:Name="CvvEntry" Keyboard="Numeric" />
+
+            <!-- Submit Button -->
+            <Button Text="Submit" Clicked="OnSubmitClicked" BackgroundColor="#6B46C1" TextColor="White" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

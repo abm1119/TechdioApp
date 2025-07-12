@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TechdioApp.Dashboard.Pages.ComingSoonPopup"
+             Title="ComingSoonPopup">
+
+
+    <!-- Pop-up Container -->
+    <Frame x:Name="PopupFrame"
+           HorizontalOptions="Center"
+           VerticalOptions="Center"
+           Padding="20"
+           CornerRadius="20"
+           BackgroundColor="White"
+           HasShadow="True">
+        <VerticalStackLayout Spacing="15">
+            <!-- Icon or Image -->
+            <Image Source="coming_soon.png"
+                   HeightRequest="80"
+                   WidthRequest="80"
+                   HorizontalOptions="Center" />
+
+            <!-- Title -->
+            <Label Text="Wait!"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#6B46C1" />
+
+            <!-- Message -->
+            <Label Text="We are working on it!"
+                   FontSize="18"
+                   HorizontalOptions="Center"
+                   TextColor="#333333" />
+
+            <!-- Submessage -->
+            <Label Text="Coming Soon by Prologware Solutions"
+                   FontSize="14"
+                   HorizontalOptions="Center"
+                   TextColor="#666666" />
+
+            <!-- Close Button -->
+            <Button Text="Got It!"
+                    Clicked="OnCloseClicked"
+                    BackgroundColor="#6B46C1"
+                    TextColor="White"
+                    CornerRadius="20"
+                    HorizontalOptions="Center"
+                    WidthRequest="120" />
+        </VerticalStackLayout>
+    </Frame>
+</ContentPage>

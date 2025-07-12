@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TechdioApp.Dashboard.Pages.CourseDetailPage"
+             Shell.NavBarIsVisible="False">
+    <ScrollView>
+        <StackLayout Spacing="20">
+
+            <!-- Debugging: Display ImageUrl -->
+            <Label Text="{Binding ImageUrl}" 
+                   FontSize="12" 
+                   TextColor="Red" 
+                   HorizontalOptions="Center" />
+
+            <!-- Course Image -->
+            <Image Source="{Binding ImageUrl, FallbackValue='placeholder.png'}" 
+                   Aspect="AspectFill"
+                   HeightRequest="250"
+                   HorizontalOptions="FillAndExpand" />
+
+            <!-- Course Title -->
+            <Label Text="{Binding Title}" 
+                   FontSize="32" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   TextColor="#333" 
+                   LineBreakMode="WordWrap" />
+
+            <!-- Category and Price -->
+            <StackLayout Orientation="Horizontal" Spacing="20" HorizontalOptions="Center">
+                <Label Text="{Binding Category}" 
+                       FontSize="16" 
+                       TextColor="#555" />
+                <Label Text="{Binding Price}" 
+                       FontSize="16" 
+                       TextColor="#FF6600" 
+                       FontAttributes="Bold"/>
+            </StackLayout>
+
+            <!-- Course Description -->
+            <Label Text="{Binding Description}" 
+                   FontSize="14" 
+                   LineBreakMode="WordWrap" 
+                   TextColor="#555" 
+                   Padding="0,10"
+                   HorizontalTextAlignment="Center"/>
+
+            <!-- Course Modules Section -->
+            <Label Text="Course Modules" 
+                   FontSize="20" 
+                   FontAttributes="Bold" 
+                   TextColor="#333" 
+                   HorizontalOptions="Center" 
+                   Padding="10,5"/>
+
+            <!-- List of Modules -->
+            <Frame Padding="0" BackgroundColor="White" BorderColor="#ddd" CornerRadius="10">
+                <ListView ItemsSource="{Binding Modules}" 
+                          BackgroundColor="Transparent" 
+                          SeparatorColor="#ddd" 
+                          IsPullToRefreshEnabled="False"
+                          Margin="10">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding .}" TextColor="#444" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Frame>
+
+            <!-- Enroll Button -->
+            <Button Text="Enroll in Course" 
+                    Command="{Binding EnrollCommand}" 
+                    BackgroundColor="#FF6600" 
+                    TextColor="White" 
+                    CornerRadius="25" 
+                    HeightRequest="50" 
+                    VerticalOptions="Center" 
+                    Margin="0,20"
+                    Padding="0"
+                    FontSize="16" 
+                    BorderWidth="0"
+                    Clicked="OnEnrollClicked"/>
+
+            <!-- Back Button -->
+            <Button Text="Back to Courses" 
+                    Command="{Binding NavigateBackCommand}" 
+                    BackgroundColor="Transparent" 
+                    TextColor="#FF6600" 
+                    BorderColor="#FF6600" 
+                    BorderWidth="1" 
+                    CornerRadius="25" 
+                    HeightRequest="50" 
+                    VerticalOptions="Center" 
+                    Margin="0,10"
+                    FontSize="16" 
+                    Clicked="OnBackButtonClicked"/>
+
+            <!-- Techdio Copyright Footer -->
+            <Label Text="© Techdio 2025" 
+                   FontSize="12" 
+                   TextColor="#888" 
+                   HorizontalOptions="Center" 
+                   Padding="20,0"/>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

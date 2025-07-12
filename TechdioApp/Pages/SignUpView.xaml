@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TechdioApp.Pages.SignUpView"
+              BackgroundColor="{AppThemeBinding Light=#F7F8FA, Dark=#1E1E1E}"
+             Shell.NavBarIsVisible="False">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30">
+
+            <!-- Title Section -->
+            <VerticalStackLayout Spacing="8" HorizontalOptions="Center">
+                <Label Text="Create Your Account"
+                       FontSize="30"
+                       FontAttributes="Bold"
+                       TextColor="{AppThemeBinding Light=#333, Dark=#FFF}"
+                       HorizontalOptions="Center" />
+
+                <Label Text="Join us to unlock great features and benefits!"
+                       FontSize="16"
+                       TextColor="{AppThemeBinding Light=#555, Dark=#AAA}"
+                       HorizontalOptions="Center" />
+            </VerticalStackLayout>
+
+            <!-- Form Section -->
+            <Frame Padding="20" CornerRadius="15" BackgroundColor="{AppThemeBinding Light=#FFF, Dark=#2E2E2E}" HasShadow="True">
+                <VerticalStackLayout Spacing="15">
+
+                    <!-- Email -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="Email Address" FontSize="14" TextColor="{AppThemeBinding Light=#666, Dark=#BBB}" />
+                        <Entry Placeholder="Enter your email" 
+                               Text="{Binding Email}" 
+                               Keyboard="Email"
+                               BackgroundColor="{AppThemeBinding Light=#F2F3F5, Dark=#3A3A3A}" 
+                               TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                               FontSize="14"
+                               Margin="0,5" />
+                    </VerticalStackLayout>
+
+                    <!-- Full Name -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="Full Name" FontSize="14" TextColor="{AppThemeBinding Light=#666, Dark=#BBB}" />
+                        <Entry Placeholder="Enter your full name" 
+                               Text="{Binding Name}" 
+                               BackgroundColor="{AppThemeBinding Light=#F2F3F5, Dark=#3A3A3A}" 
+                               TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                               FontSize="14"
+                               Margin="0,5" />
+                    </VerticalStackLayout>
+
+                    <!-- Phone -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="Phone Number" FontSize="14" TextColor="{AppThemeBinding Light=#666, Dark=#BBB}" />
+                        <Entry Placeholder="Enter your phone number" 
+                               Text="{Binding Phone}" 
+                               Keyboard="Telephone"
+                               BackgroundColor="{AppThemeBinding Light=#F2F3F5, Dark=#3A3A3A}" 
+                               TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                               FontSize="14"
+                               Margin="0,5" />
+                    </VerticalStackLayout>
+
+                    <!-- University -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="University Name" FontSize="14" TextColor="{AppThemeBinding Light=#666, Dark=#BBB}" />
+                        <Entry Placeholder="Enter your university" 
+                               Text="{Binding University}" 
+                               BackgroundColor="{AppThemeBinding Light=#F2F3F5, Dark=#3A3A3A}" 
+                               TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                               FontSize="14"
+                               Margin="0,5" />
+                    </VerticalStackLayout>
+
+                    <!-- Location -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="Location" FontSize="14" TextColor="{AppThemeBinding Light=#666, Dark=#BBB}" />
+                        <Entry Placeholder="Enter your location" 
+                               Text="{Binding Location}" 
+                               BackgroundColor="{AppThemeBinding Light=#F2F3F5, Dark=#3A3A3A}" 
+                               TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                               FontSize="14"
+                               Margin="0,5" />
+                    </VerticalStackLayout>
+
+                    <!-- Image URL -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="Profile Image URL" FontSize="14" TextColor="{AppThemeBinding Light=#666, Dark=#BBB}" />
+                        <Entry Placeholder="Paste an image URL" 
+                               Text="{Binding ImageUrl}" 
+                               BackgroundColor="{AppThemeBinding Light=#F2F3F5, Dark=#3A3A3A}" 
+                               TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                               FontSize="14"
+                               Margin="0,5" />
+                    </VerticalStackLayout>
+
+                    <!-- Password -->
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="Password" FontSize="14" TextColor="{AppThemeBinding Light=#666, Dark=#BBB}" />
+                        <Entry Placeholder="Create a password" 
+                               Text="{Binding Password}" 
+                               IsPassword="True"
+                               BackgroundColor="{AppThemeBinding Light=#F2F3F5, Dark=#3A3A3A}" 
+                               TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                               FontSize="14"
+                               Margin="0,5" />
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Sign-Up Button -->
+            <Button Text="Sign Up"
+                    Command="{Binding SignUpCommand}"
+                    BackgroundColor="#1E90FF"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="25"
+                    HeightRequest="50"
+                    Margin="0,20" />
+
+            <!-- Navigate to Sign-In -->
+            <Button Text="Already have an account? Sign In"
+                    Command="{Binding NavigateSignInCommand}"
+                    BackgroundColor="Transparent"
+                    TextColor="#1E90FF"
+                    FontAttributes="Bold"
+                    BorderColor="#1E90FF"
+                    BorderWidth="1"
+                    CornerRadius="25"
+                    HeightRequest="50" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
