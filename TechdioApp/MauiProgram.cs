@@ -43,12 +43,12 @@ namespace TechdioApp
 
 
             // Firebase Database setup
-            builder.Services.AddSingleton(new FirebaseClient("https://techdio-maui-d729d-default-rtdb.asia-southeast1.firebasedatabase.app/"));
+            builder.Services.AddSingleton(new FirebaseClient("Your-Firebase-DatabaseURL-key-here/"));
 
             // Firebase Authentication setup
             var firebaseAuthConfig = new FirebaseAuthConfig
             {
-                ApiKey = "AIzaSyCsFZp2AA0R8sVRYNTA7bQs8jcxsTvQzpM",
+                ApiKey = "Your-Firebase-API-key-here",
                 AuthDomain = "techdio-maui-d729d.firebaseapp.com",
                 Providers = new FirebaseAuthProvider[]
                 {
