@@ -17,7 +17,7 @@ namespace TechdioApp.Services
 
         public FirebaseService()
         {
-            _firebaseClient = new FirebaseClient("https://techdio-maui-d729d-default-rtdb.asia-southeast1.firebasedatabase.app/");
+            _firebaseClient = new FirebaseClient("Your-Firebase-DatabaseURL-key-here/");
         }
         // Existing method to get all users
         // Method to get all users
