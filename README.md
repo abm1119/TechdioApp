@@ -153,7 +153,7 @@ View         ←→ ViewModel ←→ Services
 
 
 ## 🖼️ Screenshots
-<img width="8011" height="6743" alt="Techdio-AppScreens" src="https://github.com/user-attachments/assets/9e7e8eb9-0fe1-4ec8-aa96-8dc396966eb5.png" />
+![App Screens](./Techdio-AppScreens.png)
 
 ---
 
