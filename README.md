@@ -153,19 +153,7 @@ View         ←→ ViewModel ←→ Services
 
 
 ## 🖼️ Screenshots
-![Splash Screen](./AppScreens/Splash.jpg) ![Info Screen](./AppScreens/Info.jpg) ![Sign-Up Screen](./AppScreens/SignUp.jpg)
-![Info Screen](./AppScreens/Info.jpg)
-![Sign-Up Screen](./AppScreens/SignUp.jpg)
-![Sign-In Screen](./AppScreens/Signin.jpg)
-![Home Screen](./AppScreens/Home.jpg)
-![Flyout Sidebar](./AppScreens/Flyout.jpg)
-![Courses Screen](./AppScreens/Courses.jpg)
-![Tutors Screen](./AppScreens/Tutors.jpg)
-![Profile Screen](./AppScreens/Profile.jpg)
-![Edit Profile Screen](./AppScreens/Edit_Profile.jpg)
-![Custom Courses Form](./AppScreens/Custom_Course.jpg)
-![Join Waitlist Form](./AppScreens/Join_Waitlist.jpg)
-![Oppertunities Pop-Up](./AppScreens/Pop-up.jpg)
+<img width="8011" height="6743" alt="Techdio-AppScreens" src="https://github.com/user-attachments/assets/9e7e8eb9-0fe1-4ec8-aa96-8dc396966eb5.png" />
 
 ---
 
